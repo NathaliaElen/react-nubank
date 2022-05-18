@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import './App.css';
 
-function Register() {
+const formReducer = (state, event) => {
+  return {
+    ...state,
+    [event.name]: event.value,
+  }
+}
 
+function Register() {
+  const [formData, setFormData] = useReducer(formReducer, {});
+  
   const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (event) => {}
