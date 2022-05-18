@@ -1,13 +1,13 @@
 import logo from '../assets/images/logo.svg';
 import './App.css';
 
-function Register() {
+function Login() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         Formulário de Cadastro
+         Formulário de Login
         </p>
         <a
           className="App-link"
@@ -22,4 +22,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;
