@@ -10,10 +10,15 @@ const formReducer = (state, event) => {
 
 function Register() {
   const [formData, setFormData] = useReducer(formReducer, {});
-  
+
   const [submitting, setSubmitting] = useState(false);
 
-  const handleChange = (event) => {}
+  const handleChange = (event) => {
+    setFormData({
+      name: event.target.name,
+      value: event.target.value,
+    })
+  }
   
   //function expression - só existe a partir dessa linha. Ela não sofre: hoisting.
   const handleSubmit = (event) => {
@@ -33,6 +38,13 @@ function Register() {
       {submitting && (
         <div>
           <p>Carregando...</p>
+          <ul>
+            {Object.entries(formData).map(([name, value]) => (
+              <li key={name}>
+                <strong>{name}</strong>: {value.toString()}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
 
