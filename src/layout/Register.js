@@ -1,5 +1,21 @@
 import { useReducer, useState } from 'react';
-import './App.css';
+import styled from 'styled-components';
+import bannerBG from '../assets/images/bannerBG.png';
+
+const Container = styled.div`
+display: flex;
+fieldset {
+  width: 60%;
+}
+`
+
+const Banner = styled.div`
+width: 50%;
+height: 100vh;
+border: 1px solid red;
+background: url(${(props) => (props.background ? props.background : "")}) 20% 90% no-repeat;
+
+`
 
 const formReducer = (state, event) => {
   return {
@@ -32,7 +48,12 @@ function Register() {
   }
 
   return (
-    <div className="App">
+    <Container>
+      <Banner background={bannerBG}>
+
+      </Banner>
+
+      <Banner>
       <h1>Formulário de Cadastro</h1>
 
       {submitting && (
@@ -100,7 +121,8 @@ function Register() {
 
         <button type="submit">Enviar</button>
       </form>
-    </div>
+     </Banner>
+    </Container>
   );
 }
 
