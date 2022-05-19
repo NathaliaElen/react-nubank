@@ -15,7 +15,6 @@ width: 50%;
 height: 100vh;
 display: flex;
 flex-direction: column;
-justify-content: center;
 align-items: center;
 background: ${ 
   (props) => (props.background ? "url(" + props.background + ") #e5e5e5 " : "" 
@@ -24,6 +23,11 @@ background: ${
 
 @media (max-width: 1280px) {
   background-size: 60%;
+}
+
+> h1 {
+    font-size: 2em;
+    margin: 10% 5%;
 }
 
 `
