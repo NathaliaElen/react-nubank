@@ -51,10 +51,53 @@ function Register() {
       <form onSubmit={handleSubmit}>
         <fieldset>
           <label>
-            <p>CPF:</p>
+            CPF:
             <input type="text" name="cpf" id="cpf" required onChange={handleChange}/>
           </label>
         </fieldset>
+
+        <fieldset>
+          <label>
+            Nome Completo:
+            <input type="text" name="nome" id="nome" required onChange={handleChange}/>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <label>
+            Celular:
+            <input type="tel" name="celular" id="celular" onChange={handleChange}/>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <label>
+            E-mail:
+            <input type="email" name="email" id="email" required onChange={handleChange}/>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <label>
+            Confirmação de e-mail:
+            <input type="email" name="confirma_email" id="confirma_email" required onChange={handleChange}/>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <label>
+            <input type="checkbox" name="aceito_comunicacao" id="aceito_comunicacao"/>
+          </label>
+          Aceito receber comunicações do Nubank pelo WhatsApp.
+        </fieldset>
+
+        <fieldset>
+          <label>
+            <input type="checkbox" name="aceito_contrato" id="aceito_contrato"/>
+          </label>
+          Eu li, estou ciente das condições de tratamento dos meus dados pessoais e dou meu consentimento, quando aplicável, conforme descrito nesta Política de Privacidade.
+        </fieldset>
+
         <button type="submit">Enviar</button>
       </form>
     </div>
