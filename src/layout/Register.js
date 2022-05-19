@@ -6,14 +6,25 @@ const Container = styled.div`
 display: flex;
 fieldset {
   width: 60%;
+  border: none;
 }
 `
 
 const Banner = styled.div`
 width: 50%;
 height: 100vh;
-border: 1px solid red;
-background: url(${(props) => (props.background ? props.background : "")}) 20% 90% no-repeat;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: ${ 
+  (props) => (props.background ? "url(" + props.background + ") #e5e5e5 " : "" 
+  )} 
+  20% 90% no-repeat;
+
+@media (max-width: 1280px) {
+  background-size: 60%;
+}
 
 `
 
@@ -50,12 +61,11 @@ function Register() {
   return (
     <Container>
       <Banner background={bannerBG}>
+        <h1> Complete os campos ao lado para pedir sua Conta e Cartão de Crédito</h1>
 
       </Banner>
 
       <Banner>
-      <h1>Formulário de Cadastro</h1>
-
       {submitting && (
         <div>
           <p>Carregando...</p>
