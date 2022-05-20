@@ -1,6 +1,6 @@
 import { useReducer, useState } from 'react';
 import styled from 'styled-components';
-import bannerBG from '../assets/images/bannerBG.png';
+import Banner from '../components/Banner'
 
 const Container = styled.div`
 display: flex;
@@ -8,28 +8,6 @@ fieldset {
   width: 60%;
   border: none;
 }
-`
-
-const Banner = styled.div`
-width: 50%;
-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-background: ${ 
-  (props) => (props.background ? "url(" + props.background + ") #e5e5e5 " : "" 
-  )} 
-  20% 90% no-repeat;
-
-@media (max-width: 1280px) {
-  background-size: 60%;
-}
-
-> h1 {
-    font-size: 2em;
-    margin: 10% 5%;
-}
-
 `
 
 const formReducer = (state, event) => {
@@ -64,7 +42,7 @@ function Register() {
 
   return (
     <Container>
-      <Banner background={bannerBG}>
+      <Banner background={true}>
         <h1> Complete os campos ao lado para pedir sua Conta e Cartão de Crédito</h1>
 
       </Banner>
